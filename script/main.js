@@ -1,5 +1,5 @@
 let btnCall = document.querySelector('.btnCall');
-let menuMo = document.querySelector('manuMo');
+let menuMo = document.querySelector('.manuMo');
 
 btnCall.addEventListener('click', (e) => {
 	e.preventDefault();

@@ -1,0 +1,871 @@
+@charset "UTF-8";
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+a:visited {
+  color: #000;
+}
+
+.wrap::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+#header {
+  width: 100%;
+  border-bottom: 1px solid #ddd;
+}
+#header .inner {
+  width: 1180px;
+  height: 120px;
+  margin: 0 auto;
+  background-color: #ccc;
+  position: relative;
+}
+#header .inner h1 {
+  position: absolute;
+  bottom: 15px;
+  left: 0px;
+}
+#header .inner h1 a {
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 1;
+  font-family: arial;
+  color: #444;
+}
+#header .inner .menuWeb #gnb {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  display: flex;
+}
+#header .inner .menuWeb #gnb li a {
+  display: block;
+  padding: 14px 40px;
+  /* background-color: aqua; */
+  font: bold 14px/1 "arial";
+  color: #777;
+}
+#header .inner .menuWeb #gnb li a:hover {
+  background-color: #555;
+  color: #fff;
+}
+#header .inner .menuWeb .util {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  display: flex;
+  gap: 20px;
+}
+#header .inner .menuWeb .util li a {
+  font: 12px/1 "arial";
+  color: #999;
+}
+#header .inner .btnCall {
+  position: absolute;
+  top: 50%;
+  right: 30px;
+  display: none;
+  width: 20px;
+  height: 20px;
+}
+#header .inner .btnCall::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #000;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+#header .inner .btnCall::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #000;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+}
+#header .inner .btnCall span {
+  position: absolute;
+  text-indent: -9999999px;
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #000;
+  top: 50%;
+  margin-top: -1px;
+}
+#header .inner .menuMo {
+  width: 270px;
+  height: 100vh;
+  background-color: #333;
+  position: fixed;
+  top: 0px;
+  left: -270px;
+  z-index: 10;
+  padding: 35px 30px;
+}
+#header .inner .menuMo h2 {
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 30px;
+}
+#header .inner .menuMo h2 a {
+  font: bold 24px/1 "arial";
+  color: #fff;
+  display: block;
+  text-align: center;
+  margin-bottom: 5px;
+}
+#header .inner .menuMo h2 span {
+  display: block;
+  font-size: 12px;
+  color: #aaa;
+  text-align: center;
+}
+#header .inner .menuMo ul li a {
+  display: block;
+  padding: 20px 0px;
+  font: bold 14px/1 "맑은 고딕";
+  text-align: center;
+  color: #888;
+}
+
+@media screen and (max-width: 700px) {
+  /* 미디어 쿼리부분에서는
+  반드시 이전 영역코드의 네스팅을 따라서
+  써주어야 코드의 충돌로 인한 깨짐이 안일어남
+  또한 유지보수측면에서도 유익합니다
+  */
+  #header .inner {
+    width: 100%;
+  }
+  #header .inner h1 {
+    left: 30px;
+  }
+  #header .inner .menuWeb {
+    display: none;
+  }
+  #header .inner .btnCall {
+    display: block;
+  }
+}
+#footer {
+  width: 100%;
+  padding: 0 auto;
+}
+#footer .inner {
+  width: 1180px;
+  margin: 0 auto;
+}
+#footer .inner::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+#footer .inner h2 {
+  font: bold 24px/1 "arial";
+  color: #666;
+  float: left;
+}
+#footer .inner ul {
+  float: right;
+}
+#footer .inner ul li {
+  float: left;
+  margin-left: 20px;
+}
+#footer .inner ul li a {
+  font: bold 14px/1 "arial";
+  color: #666;
+}
+#footer .inner address {
+  width: 100%;
+  float: left;
+  font: 14px/1.3 "맑은고딕";
+  color: #fff;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  border-top: 2px solid orange;
+  padding-top: 20px;
+}
+#footer .inner p {
+  float: left;
+  width: 100%;
+  font: 12px/1 "arial";
+  color: #777;
+}
+
+@media screen and (max-width: 700px) {
+  #footer {
+    padding: 50px 30px;
+  }
+  #footer .inner {
+    width: 100%;
+  }
+}
+#visual {
+  width: 100%;
+  height: calc(100vh - 121px);
+  overflow: hidden;
+  background-color: #000;
+}
+#visual video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.4;
+}
+#visual .inner {
+  width: 1180px;
+  margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#visual .inner h2 {
+  font-weight: 900;
+  font-size: 120px;
+  line-height: 1;
+  font-family: arial;
+  color: #fff;
+  margin-bottom: 20px;
+}
+#visual .inner p {
+  font: 16px/1.4 "arial";
+  color: #888;
+  margin-bottom: 80px;
+}
+#visual .inner a {
+  display: block;
+  width: 400px;
+  height: 30px;
+  border: 1px solid #bbb;
+  color: #fff;
+  text-align: center;
+  font: bold 11px/30px "arial";
+}
+#visual .inner a:hover {
+  background-color: #fff;
+  color: #555;
+}
+
+@media screen and (max-width: 700px) {
+  #visual {
+    background-image: url(../img/visual2.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+  #visual video {
+    display: none;
+  }
+  #visual .inner {
+    width: 100%;
+    padding: 0 30px;
+  }
+  #visual .inner h2 {
+    font: normal 14vw/1 "arial";
+  }
+  #visual .inner a {
+    width: 100%;
+  }
+}
+#news {
+  width: 100%;
+  padding: 200px 0px;
+}
+#news .inner {
+  width: 1180px;
+  margin: 0 auto;
+}
+#news .inner h2 {
+  font: bold 24px/1 "arial";
+  color: #555;
+  text-align: center;
+  margin-bottom: 50px;
+}
+#news .inner .wrap {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+#news .inner .wrap article {
+  width: 280px;
+}
+#news .inner .wrap article .pic {
+  width: 100%;
+  height: 120px;
+  margin-bottom: 10px;
+}
+#news .inner .wrap article .pic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+#news .inner .wrap article h3 {
+  font: bold 16px/1 "arial";
+  color: #555;
+  margin-bottom: 10px;
+}
+#news .inner .wrap article p {
+  font: 14px/1.3 "arial";
+  color: #777;
+}
+
+@media screen and (max-width: 700px) {
+  #news {
+    padding: 100px 30px;
+  }
+  #news .inner {
+    width: 100%;
+  }
+  #news .inner .wrap {
+    flex-wrap: wrap;
+  }
+  #news .inner .wrap article {
+    width: 49%;
+    margin-bottom: 30px;
+  }
+}
+#brand {
+  width: 100%;
+  padding: 200px 0;
+  background-color: #eee;
+}
+#brand .inner {
+  width: 1180px;
+  margin: 0 auto;
+  position: relative;
+}
+#brand .inner h2 {
+  font: bold 24px/1 "arial";
+  color: #555;
+  text-align: center;
+  margin-bottom: 50px;
+}
+#brand .inner .wrap {
+  width: 100%;
+}
+#brand .inner .wrap article:nth-of-type(1) {
+  width: 380px;
+  height: 620px;
+  background-color: #444;
+  float: left;
+  margin-right: 20px;
+  padding: 170px 50px 0;
+  text-align: center;
+}
+#brand .inner .wrap article:nth-of-type(1) i {
+  font-size: 100px;
+  color: #fff;
+  margin-bottom: 20px;
+}
+#brand .inner .wrap article:nth-of-type(1) h3 {
+  font: bold 20px/1 "arial";
+  color: #fff;
+  margin-bottom: 30px;
+}
+#brand .inner .wrap article:nth-of-type(1) p {
+  font: 14px/1.3 "arial";
+  color: #999;
+  margin-bottom: 30px;
+}
+#brand .inner .wrap article:nth-of-type(1) a {
+  display: block;
+  width: 150px;
+  height: 30px;
+  font: 11px/30px "arial";
+  color: #ddd;
+  border: 1px solid #bbb;
+  margin: 0 auto;
+}
+#brand .inner .wrap article:nth-of-type(2) {
+  width: 380px;
+  height: 300px;
+  float: left;
+  margin-right: 20px;
+}
+#brand .inner .wrap article:nth-of-type(2) img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+#brand .inner .wrap article:nth-of-type(3) {
+  width: 380px;
+  height: 300px;
+  float: left;
+}
+#brand .inner .wrap article:nth-of-type(3) img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+#brand .inner .wrap article:nth-of-type(4) {
+  width: 780px;
+  height: 300px;
+  float: left;
+  margin-top: 20px;
+}
+#brand .inner .wrap article:nth-of-type(4) img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media screen and (max-width: 700px) {
+  #brand {
+    padding: 100px 30px;
+  }
+  #brand .inner {
+    width: 100%;
+  }
+  #brand .inner .wrap article:nth-of-type(1) {
+    width: 49%;
+    margin-right: 2%;
+  }
+  #brand .inner .wrap article:nth-of-type(2) {
+    width: 49%;
+    margin-right: 0px;
+    margin-bottom: 20px;
+  }
+  #brand .inner .wrap article:nth-of-type(3) {
+    width: 49%;
+  }
+  #brand .inner .wrap article:nth-of-type(4) {
+    width: 100%;
+  }
+}
+#banner {
+  width: 100%;
+  padding: 150px 0px;
+  background-image: url(../img/banner.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+#banner .inner {
+  width: 1180px;
+  margin: 0 auto;
+}
+#banner .inner h2 {
+  font: bold 30px/1 "arial";
+  color: #fff;
+  text-align: center;
+  margin-bottom: 30px;
+}
+#banner .inner p {
+  font: 16px/1.3 "arial";
+  color: #bbb;
+  text-align: center;
+}
+
+@media screen and (max-width: 700px) {
+  #banner {
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+    /*
+              1. display: none; 완전히 개체를 지우는 효과
+              따라서 제약사항이 존재합니다
+              2. visibility: hidden;
+              대상을 안보이게 하고 요소를 감추는 대신, 기능은 살아있도록 합니다
+              3. opacity: 0; (때에 따라서는 z-index:-@@;를 추가해야 할수도있음)
+              대상에 투명도를 제거하여 보이지는 않게 하지만, 요소가 감추어진것이
+              아니기 때문에 요소의 높이, 공간은 유지됨
+              따라서 이 공간의 유지를 제거하는 목적으로 z-index를 추가하기도 합니다
+          */
+  }
+}
+#comments {
+  width: 100%;
+  padding: 150px 0;
+  background-color: #ddd;
+}
+#comments .inner {
+  width: 1180px;
+  margin: 0 auto;
+}
+#comments .inner h2 {
+  font: bold 24px/1 "arial";
+  color: #555;
+  text-align: center;
+  margin-bottom: 50px;
+}
+#comments .inner ul {
+  width: 100%;
+}
+#comments .inner ul li {
+  width: 100%;
+  border: 1px solid #111;
+  padding: 15px 20px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#comments .inner ul li a {
+  font: 12px/1 "arial";
+  color: #555;
+  text-transform: uppercase;
+}
+#comments .inner ul li a:active {
+  color: orange;
+}
+#comments .inner ul li span {
+  font: 12px/1 "arial";
+  color: #888;
+}
+
+@media screen and (max-width: 700px) {
+  #comments {
+    padding: 100px 30px;
+  }
+  #comments .inner {
+    width: 100%;
+  }
+}
+#header_sub {
+  width: 100%;
+  border-bottom: 1px solid #ddd;
+}
+#header_sub .inner {
+  width: 1180px;
+  height: 120px;
+  margin: 0 auto;
+  background-color: #ccc;
+  position: relative;
+}
+#header_sub .inner h1 {
+  position: absolute;
+  bottom: 15px;
+  left: 0px;
+}
+#header_sub .inner h1 a {
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 1;
+  font-family: arial;
+  color: #444;
+}
+#header_sub .inner .menuWeb #gnb {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  display: flex;
+}
+#header_sub .inner .menuWeb #gnb li a {
+  display: block;
+  padding: 14px 40px;
+  /* background-color: aqua; */
+  font: bold 14px/1 "arial";
+  color: #777;
+}
+#header_sub .inner .menuWeb #gnb li a:hover {
+  background-color: #555;
+  color: #fff;
+}
+#header_sub .inner .menuWeb .util {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  display: flex;
+  gap: 20px;
+}
+#header_sub .inner .menuWeb .util li a {
+  font: 12px/1 "arial";
+  color: #999;
+}
+#header_sub .inner .btnCall {
+  position: absolute;
+  top: 50%;
+  right: 30px;
+  display: none;
+  width: 20px;
+  height: 20px;
+}
+#header_sub .inner .btnCall::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #000;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+#header_sub .inner .btnCall::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #000;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+}
+#header_sub .inner .btnCall span {
+  position: absolute;
+  text-indent: -9999999px;
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #000;
+  top: 50%;
+  margin-top: -1px;
+}
+#header_sub .inner .menuMo {
+  width: 270px;
+  height: 100vh;
+  background-color: #333;
+  position: fixed;
+  top: 0px;
+  left: -270px;
+  z-index: 10;
+  padding: 35px 30px;
+}
+#header_sub .inner .menuMo h2 {
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 30px;
+}
+#header_sub .inner .menuMo h2 a {
+  font: bold 24px/1 "arial";
+  color: #fff;
+  display: block;
+  text-align: center;
+  margin-bottom: 5px;
+}
+#header_sub .inner .menuMo h2 span {
+  display: block;
+  font-size: 12px;
+  color: #aaa;
+  text-align: center;
+}
+#header_sub .inner .menuMo ul li a {
+  display: block;
+  padding: 20px 0px;
+  font: bold 14px/1 "맑은 고딕";
+  text-align: center;
+  color: #888;
+}
+
+.content {
+  width: 100%;
+  padding: 0px 0px 150px;
+}
+.content .sub_visual {
+  width: 100%;
+  height: 250px;
+  background-color: #bbb;
+  margin-bottom: 100px;
+}
+.content .inner {
+  width: 1180px;
+  margin: 0px auto;
+  min-height: 500px;
+}
+.content .inner h2 {
+  font: normal 50px/1 "arial";
+  color: #000;
+  margin-bottom: 60px;
+}
+.content .inner h2 span {
+  font: normal 20px/1 "맑은 고딕";
+  color: #aaa;
+}
+.content .inner h2 span::before {
+  content: "/";
+  margin: 0px 20px 0px 10px;
+}
+
+#footer_sub {
+  width: 100%;
+  padding: 0 auto;
+}
+#footer_sub .inner {
+  width: 1180px;
+  margin: 0px auto;
+}
+#footer_sub .inner::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+#footer_sub .inner h2 {
+  font: bold 24px/1 "arial";
+  color: #666;
+  float: left;
+}
+#footer_sub .inner ul {
+  float: right;
+}
+#footer_sub .inner ul li {
+  float: left;
+  margin-left: 20px;
+}
+#footer_sub .inner ul li a {
+  font: bold 14px/1 "arial";
+  color: #666;
+}
+#footer_sub .inner address {
+  width: 100%;
+  float: left;
+  font: 14px/1.3 "맑은고딕";
+  color: #fff;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  border-top: 2px solid orange;
+  padding-top: 20px;
+}
+#footer_sub .inner p {
+  float: left;
+  width: 100%;
+  font: 12px/1 "arial";
+  color: #777;
+}
+
+@media screen and (max-width: 700px) {
+  /* 미디어 쿼리부분에서는 반드시 이전 영역코드의 네스팅을 따라서 써주어야 코드의 충돌로 인한 깨짐이 안일어남
+    또한 유지보수측면에서도 유익합니다 */
+  #header_sub .inner {
+    width: 100%;
+  }
+  #header_sub .inner h1 {
+    left: 30px;
+  }
+  #header_sub .inner .menuWeb {
+    display: none;
+  }
+  #header_sub .inner .btnCall {
+    display: block;
+  }
+  .content {
+    padding: 0px 0px 50px;
+  }
+  .content .sub_visual {
+    height: 200px;
+    margin-bottom: 80px;
+  }
+  .content .inner {
+    width: 100%;
+    padding: 0px 30px;
+  }
+  #footer_sub {
+    padding: 50px 30px;
+  }
+  #footer_sub .inner {
+    width: 100%;
+  }
+}
+.department .sub_visual {
+  background-image: url(../img/brand4.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.department .inner .division {
+  width: 100%;
+  min-height: 600px;
+  background: url(../img/bgDIvision.jpg) no-repeat center/contain;
+}
+.department .inner .division .div_tree {
+  position: absolute;
+  top: -999px;
+  opacity: 0;
+  transition: all 1s;
+}
+.department .inner .division .div_tree li span {
+  display: block;
+  width: 40%;
+  height: 50px;
+  background-color: #111;
+  font: bold 13px/50px "맑은 고딕";
+  color: #fff;
+  text-align: center;
+  border-radius: 25px;
+  margin-bottom: 20px;
+  position: relative;
+}
+.department .inner .division .div_tree li span::after {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 1165px;
+  background-color: #aaa;
+  position: absolute;
+  top: 50px;
+  left: 50px;
+}
+.department .inner .division .div_tree li ul li span {
+  background-color: #666;
+  transform: translateX(70px);
+}
+.department .inner .division .div_tree li ul li span::before {
+  content: "";
+  display: block;
+  width: 20px;
+  height: 1px;
+  background-color: #aaa;
+  position: absolute;
+  top: 50%;
+  left: -20px;
+}
+.department .inner .division .div_tree li ul li:nth-of-type(1) span::after {
+  display: none;
+}
+.department .inner .division .div_tree li ul li:nth-of-type(2) span::after {
+  display: none;
+}
+.department .inner .division .div_tree li ul li:nth-of-type(3) span::after {
+  height: 115px;
+}
+.department .inner .division .div_tree li ul li:nth-of-type(4) span::after {
+  height: 185px;
+}
+.department .inner .division .div_tree li ul li:nth-of-type(5) span::after {
+  height: 115px;
+}
+.department .inner .division .div_tree li ul li:nth-of-type(6) span::after {
+  height: 185px;
+}
+.department .inner .division .div_tree li ul li:nth-of-type(7) span::after {
+  height: 115px;
+}
+.department .inner .division .div_tree li ul li ul li span {
+  background-color: #999;
+  transform: translateX(140px);
+}
+.department .inner .division .div_tree li ul li ul li span::after {
+  display: none;
+}
+
+@media screen and (max-width: 700px) {
+  .department .inner .division {
+    background: none;
+  }
+  .department .inner .division .div_tree {
+    position: relative;
+    opacity: 1;
+    top: 0px;
+  }
+}
+
+/*# sourceMappingURL=style.cs.map */

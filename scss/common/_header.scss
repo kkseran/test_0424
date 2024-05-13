@@ -5,7 +5,7 @@
 		width: 1180px;
 		height: 120px;
 		margin: 0 auto;
-		background-color: #ccc;
+		// background-color: #ccc;
 		position: relative;
 		h1 {
 			position: absolute;
@@ -70,6 +70,13 @@
 				position: absolute;
 				top: 0px;
 				left: 0px;
+				transition: top 0.5s 0s, transform 0.5s 0.5s;
+				// transition-property: (대상) top;
+				// transition-duration: (시간) 0.5s;
+				// transition-delay: (딜레이) 0s;
+				// transition-property: (대상) transform(rotate);
+				// transition-duration: (시간) 0.5s;
+				// transition-delay: (딜레이) 0.5s;
 			}
 			&::after {
 				content: '';
@@ -80,6 +87,7 @@
 				position: absolute;
 				bottom: 0px;
 				left: 0px;
+				transition: bottom 0.5s 0s, transform 0.5s 0.5s;
 			}
 			span {
 				position: absolute;
@@ -90,6 +98,23 @@
 				background-color: #000;
 				top: 50%;
 				margin-top: -1px;
+				transition: all 1s;
+			}
+			&.on {
+				&::before {
+					top: 50%;
+					margin-top: -1px;
+					transform: rotate(45deg);
+				}
+				&::after {
+					bottom: 50%;
+					margin-bottom: -1px;
+					transform: rotate(-45deg);
+				}
+				span {
+					transform: translateX(100%);
+					opacity: 0;
+				}
 			}
 		}
 		.menuMo {
@@ -101,6 +126,10 @@
 			left: -270px;
 			z-index: 10;
 			padding: 35px 30px;
+			transition: all 1s;
+			&.on {
+				left: 0px;
+			}
 			h2 {
 				border-bottom: 1px solid #ccc;
 				padding-bottom: 30px;

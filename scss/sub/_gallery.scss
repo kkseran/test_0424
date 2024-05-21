@@ -33,6 +33,41 @@
 				padding: 30px;
 				#list {
 					width: 100%;
+					transform: translateY(100px);
+					transition: all 1s;
+					opacity: 0;
+					&::after {
+						content: '';
+						display: block;
+						clear: both;
+					}
+					li {
+						width: calc(100% / 4);
+						float: left;
+						padding: 10px;
+						div {
+							width: 100%;
+							background-color: #fff;
+							padding: 20px;
+							border-radius: 5px;
+							box-shadow: 5px 5px 5px rgba($color: #000000, $alpha: 0.1);
+							a {
+								img {
+									width: 100%;
+								}
+							}
+							p {
+								font: 12px/1.2 'arial';
+								color: #777;
+								margin: 10px 0px;
+								text-align: center;
+							}
+						}
+					}
+					&.on {
+						opacity: 1;
+						transform: translateY(0);
+					}
 				}
 			}
 		}

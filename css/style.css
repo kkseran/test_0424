@@ -939,6 +939,39 @@ a:visited {
 }
 .gallery .inner #flickr_gallery #wrap #list {
   width: 100%;
+  transform: translateY(100px);
+  transition: all 1s;
+  opacity: 0;
+}
+.gallery .inner #flickr_gallery #wrap #list::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.gallery .inner #flickr_gallery #wrap #list li {
+  width: 25%;
+  float: left;
+  padding: 10px;
+}
+.gallery .inner #flickr_gallery #wrap #list li div {
+  width: 100%;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+}
+.gallery .inner #flickr_gallery #wrap #list li div a img {
+  width: 100%;
+}
+.gallery .inner #flickr_gallery #wrap #list li div p {
+  font: 12px/1.2 "arial";
+  color: #777;
+  margin: 10px 0px;
+  text-align: center;
+}
+.gallery .inner #flickr_gallery #wrap #list.on {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .location {
